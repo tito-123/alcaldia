@@ -1,0 +1,31 @@
+   <body>
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        
+                        <li class="active"><a href="#General" data-toggle="tab">General</a></li>
+                        <li ><a href="#" data-toggle="tab">Mapa</a></li>
+                        <li ><a href="#" data-toggle="tab">Contactos</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div class="active tab-pane" id="activity">
+                      </div>
+                    </div>
+                </div>
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+
+           
+        </div>
